@@ -55,13 +55,15 @@ export default function Home() {
           return (
             <Card key={log.id} className="shadow-sm">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 pt-3 px-4">
-                <CardTitle className="text-base font-medium">
-                  {log.log_date}
-                </CardTitle>
                 <div className="flex items-center gap-2">
+                  <CardTitle className="text-base font-medium">
+                    {log.log_date}
+                  </CardTitle>
                   <Badge variant={log.source === 'git' ? 'secondary' : 'default'} className="text-xs">
                     {log.source}
                   </Badge>
+                </div>
+                <div className="flex items-center gap-2">
                   <Button variant="outline" size="sm" onClick={() => handleEdit(log)}>
                     编辑
                   </Button>
